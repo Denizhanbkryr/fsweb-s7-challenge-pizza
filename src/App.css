@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  background-color: #61dafb;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Homepage {
+  text-align: center;
+  /*font-family: "Quattrocento", serif;*/
+
+  font-family: "Satisfy", cursive;
+}
+.body {
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
 }
 
 .App-logo {
@@ -14,7 +31,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: red;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
