@@ -2,11 +2,10 @@ import React from "react";
 
 const SiparisOnayi = () => {
   return (
-    <div className="Homepage">
+    <div className="onayBolumu">
       <header>Teknolojik Yemekler</header>
-      <div className="OnayBolumu">
-        <h2>TEBRİKLER! SİPARİŞİNİZ ALINDI</h2>
-      </div>
+
+      <h2>TEBRİKLER! SİPARİŞİNİZ ALINDI</h2>
     </div>
   );
 };

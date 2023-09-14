@@ -1,30 +1,21 @@
 import React from "react";
 import PizzaOrderForm from "./Components/PizzaOrderForm";
 import { useState } from "react";
-import {
-  Switch,
-  Route,
-  NavLink,
-  useHistory,
-  BrowserRouter,
-} from "react-router-dom";
+import { Switch, Route, useHistory, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import AnaSayfa from "./Components/AnaSayfa";
 import SiparisOnayi from "./Components/SiparisOnayi";
 
 function App() {
   const [formData, setFormData] = useState({
-    name: "acılı pizza",
+    name: "Position Absolute Acı pizza",
+    fiyat: "86,5 ₺",
     size: "",
     toppings: [],
     special: "",
     dough: "",
     nameError: "",
   });
-
-  const handleNameChange = (e) => {
-    setFormData({ ...formData, name: e.target.value });
-  };
 
   const handleSizeChange = (e) => {
     setFormData({ ...formData, size: e.target.value });
@@ -46,9 +37,7 @@ function App() {
     setFormData({ ...formData, dough: e.target.value });
   };
 
-  const [selectedSize, setSelectedSize] = useState("");
-
-  const history = useHistory();
+  /*
   const handleSubmit = () => {
     if (formData.name.length < 2) {
       setFormData({
@@ -60,7 +49,7 @@ function App() {
     } else {
       setFormData({ ...formData, nameError: "" });
 
-      history.push("/onay");
+      history.push("/Onay");
     }
 
     setFormData({
@@ -72,35 +61,50 @@ function App() {
       nameError: "",
     });
   };
+  */
+  const history = useHistory();
+  const handleSubmit = (event) => {
+    console.log("deneme");
+    event.preventDefault();
+    history.push("/onay");
+
+    console.log(event.target.value);
+    console.log(event);
+  };
+
+  const handleButtonClickOrderForm = () => {
+    history.push("/onay");
+  };
 
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact>
-          <div className="App-header">
-            <AnaSayfa />
-            <img
-              src="C:\Users\deniz\fsweb-s7-challenge-pizza\src\images\mvp-banner.png"
-              alt="Resim Açıklaması"
-            />
-          </div>
-        </Route>
-        <Route path="/pizza" exact>
-          <div className="App">
-            <PizzaOrderForm
-              handleSizeChange={handleSizeChange}
-              handleToppingChange={handleToppingChange}
-              handleSpecialChange={handleSpecialChange}
-              handleDoughChange={handleDoughChange}
-              handleSubmit={handleSubmit}
-              formData={formData}
-            />
-            <Route path="/onay">
-              <SiparisOnayi />
-            </Route>
-          </div>
-        </Route>
-      </Switch>
+      <div>
+        <Switch>
+          <Route path="/" exact>
+            <div className="App">
+              <AnaSayfa />
+            </div>
+          </Route>
+          <Route path="/pizza" exact>
+            <div className="App-header">Teknolojik Yemekler </div>
+
+            <div className="Form">
+              <PizzaOrderForm
+                handleButtonClickOrderForm={handleButtonClickOrderForm}
+                handleSizeChange={handleSizeChange}
+                handleToppingChange={handleToppingChange}
+                handleSpecialChange={handleSpecialChange}
+                handleDoughChange={handleDoughChange}
+                handleSubmit={handleSubmit}
+                formData={formData}
+              />
+            </div>
+          </Route>
+          <Route path="/onay">
+            <SiparisOnayi />
+          </Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }

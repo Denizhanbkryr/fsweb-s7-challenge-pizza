@@ -1,27 +1,228 @@
 .App {
   text-align: center;
-  background-color: #61dafb;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  height: 707px;
+  background-image: url("./images/mvp-banner.png");
+  background-size: cover;
+}
+.onayBolumu {
+  text-align: center;
+  height: 707px;
+  background-color: #ce2829;
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "Satisfy", cursive;
+}
+
+.onayBolumu header {
+  padding: 5%;
+}
+.onayBolumu h2 {
+  width: 40%;
+  margin: auto;
+  padding-top: 5%;
 }
 
 .Homepage {
   text-align: center;
-  /*font-family: "Quattrocento", serif;*/
-
+  font-size: xx-large;
   font-family: "Satisfy", cursive;
+  color: white;
 }
 .body {
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Quattrocento", serif;
+  width: 50%;
+  margin: auto;
+  font-size: xx-large;
+  color: white;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.Form {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  margin-left: 14%;
+  margin-right: 14%;
+}
+
+label h2 {
+  width: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.Form p {
+  width: 50%;
+  margin: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+}
+
+h3 {
+  margin: auto;
+  margin-right: 20%;
+  margin-bottom: 3%;
+}
+
+.main h1 {
+  width: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.secimYeri {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 35%;
+}
+
+.PizzaBoyutu {
+  display: block;
+  width: auto;
+}
+
+.hamurKalınlıgı {
+  height: auto;
+  width: 121px;
+}
+
+.instaFoto img {
+  width: auto;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+.button:hover {
+  background-color: #4caf50; /* Green */
+
+  color: #f00;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+.malzemeler {
+  margin-top: 50px;
+  margin-left: 20%;
+  margin-right: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#pizzaBoyutu {
+  font-weight: bold;
+}
+
+.malzemeBaslık {
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#dough-dropdown-label {
+  font-weight: bold;
+}
+.uyarı {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.grup1 {
+  width: 25%;
+}
+
+.grup2 {
+  width: 25%;
+}
+
+.ingredients {
+  width: auto;
+  margin-bottom: 3%;
+}
+
+.siparisNotu {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 50px;
+  margin-bottom: 5%;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #fdc913;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #fdc913;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,19 +233,36 @@
 
 .App-header {
   background-color: red;
-  min-height: 100vh;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: "Satisfy", cursive;
+  font-weight: bolder;
+}
+
+.fiyatBilgisi h2 {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+select {
+  background-color: #eee;
+  position: absolute;
+  border: 6px solid transparent;
+  margin-top: 1%;
+}
+
+.custom-select {
+  width: auto;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
